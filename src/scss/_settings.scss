@@ -113,6 +113,7 @@ a {
 .main-link {
   position: relative;
   font-size: 15px;
+  color: var(--color-dark);
 
   &::before {
     content: "";
@@ -121,7 +122,7 @@ a {
     bottom: -5px;
     width: 0;
     height: 2px;
-    background-color: var(--color-dark);
+    background-color: currentColor;
     transition: width 0.15s;
   }
 
@@ -137,5 +138,9 @@ a {
       width: 100%;
       transition: width 0.15s;
     }
+  }
+
+  &--white {
+    color: var(--color-white);
   }
 }

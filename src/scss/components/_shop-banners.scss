@@ -31,7 +31,6 @@
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: rgba(#d70808, 0.1);
   }
 
   &__title {
@@ -51,9 +50,17 @@
 
   &--men {
     background-image: url("../img/banner-1.jpg");
+
+    &::before {
+      background-color: rgba(#d70808, 0.1);
+    }
   }
 
   &--women {
     background-image: url("../img/banner-2.jpg");
+
+    &::before {
+      background-color: rgba(#000000, 0.1);
+    }
   }
 }

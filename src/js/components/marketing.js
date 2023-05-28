@@ -17,40 +17,42 @@ const data = [
 ];
 
 // Functions
-let counter = 0;
-let delay = 8000;
+if (vars.marketing) {
+  let counter = 0;
+  let delay = 8000;
 
-const closeMarketing = function () {
-  vars.marketing.classList.remove("marketing--visible");
-};
+  const closeMarketing = function () {
+    vars.marketing.classList.remove("marketing--visible");
+  };
 
-const openMarketing = function () {
-  vars.marketing.classList.add("marketing--visible");
-};
+  const openMarketing = function () {
+    vars.marketing.classList.add("marketing--visible");
+  };
 
-const changeMarketingData = function () {
-  vars.marketing.classList.remove("marketing--visible");
+  const changeMarketingData = function () {
+    vars.marketing.classList.remove("marketing--visible");
 
-  setTimeout(openMarketing, delay - 4000);
+    setTimeout(openMarketing, delay - 4000);
 
-  const stringTitle = `${data[counter].title}`;
-  const stringWhenWhere = `${data[counter].whenWhere}`;
+    const stringTitle = `${data[counter].title}`;
+    const stringWhenWhere = `${data[counter].whenWhere}`;
 
-  vars.marketing.querySelector(".marketing__title").textContent = stringTitle;
-  vars.marketing.querySelector(".marketing__when-from").textContent =
-    stringWhenWhere;
+    vars.marketing.querySelector(".marketing__title").textContent = stringTitle;
+    vars.marketing.querySelector(".marketing__when-from").textContent =
+      stringWhenWhere;
 
-  counter++;
+    counter++;
 
-  if (counter === data.length) {
-    counter = 0;
-  }
-};
+    if (counter === data.length) {
+      counter = 0;
+    }
+  };
 
-setInterval(changeMarketingData, delay);
+  setInterval(changeMarketingData, delay);
 
-vars.marketing.addEventListener("click", (e) => {
-  if (e.target.classList.contains("marketing__close")) {
-    closeMarketing();
-  }
-});
+  vars.marketing.addEventListener("click", (e) => {
+    if (e.target.classList.contains("marketing__close")) {
+      closeMarketing();
+    }
+  });
+}
